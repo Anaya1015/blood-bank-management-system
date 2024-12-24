@@ -139,3 +139,4 @@ C:\Users\Kainat\Source\Repos\bank-project-new\mera\obj\Debug\net8.0-windows\refi
 C:\Users\Kainat\Source\Repos\bank-project-new\mera\obj\Debug\net8.0-windows\project.pdb
 C:\Users\Kainat\Source\Repos\bank-project-new\mera\obj\Debug\net8.0-windows\project.genruntimeconfig.cache
 C:\Users\Kainat\Source\Repos\bank-project-new\mera\obj\Debug\net8.0-windows\ref\project.dll
+C:\Users\Kainat\Source\Repos\bank-project-new\mera\obj\Debug\net8.0-windows\project.Recipientdashboard.resources
