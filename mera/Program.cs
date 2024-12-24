@@ -12,6 +12,7 @@ namespace project
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             Application.Run(new viewdonor());
+            //hello kaiant kya hall ha
         }
     }
 }
