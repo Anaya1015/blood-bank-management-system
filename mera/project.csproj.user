@@ -40,6 +40,9 @@
     <Compile Update="ModifyStock.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Recipientdashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="reset.cs">
       <SubType>Form</SubType>
     </Compile>
