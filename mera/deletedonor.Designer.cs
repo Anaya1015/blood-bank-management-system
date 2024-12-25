@@ -33,9 +33,10 @@
             deletedonortxtbtn = new Button();
             idfordeletedonorbtn = new Button();
             idtxtfordeletedonor = new TextBox();
-            deletedonorpanel = new Panel();
             deletedonorbtn = new Button();
+            donorsDataGridView = new DataGridView();
             addeletedonorpanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)donorsDataGridView).BeginInit();
             SuspendLayout();
             // 
             // addeletedonorpanel
@@ -44,9 +45,8 @@
             addeletedonorpanel.Controls.Add(deletedonortxtbtn);
             addeletedonorpanel.Dock = DockStyle.Top;
             addeletedonorpanel.Location = new Point(0, 0);
-            addeletedonorpanel.Margin = new Padding(4, 5, 4, 5);
             addeletedonorpanel.Name = "addeletedonorpanel";
-            addeletedonorpanel.Size = new Size(1143, 187);
+            addeletedonorpanel.Size = new Size(800, 112);
             addeletedonorpanel.TabIndex = 1;
             // 
             // deletedonortxtbtn
@@ -57,10 +57,9 @@
             deletedonortxtbtn.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             deletedonortxtbtn.ForeColor = Color.Maroon;
             deletedonortxtbtn.ImageAlign = ContentAlignment.MiddleRight;
-            deletedonortxtbtn.Location = new Point(347, 52);
-            deletedonortxtbtn.Margin = new Padding(4, 5, 4, 5);
+            deletedonortxtbtn.Location = new Point(243, 31);
             deletedonortxtbtn.Name = "deletedonortxtbtn";
-            deletedonortxtbtn.Size = new Size(443, 93);
+            deletedonortxtbtn.Size = new Size(310, 56);
             deletedonortxtbtn.TabIndex = 0;
             deletedonortxtbtn.Text = "DELETE DONOR";
             deletedonortxtbtn.UseVisualStyleBackColor = false;
@@ -73,10 +72,9 @@
             idfordeletedonorbtn.FlatStyle = FlatStyle.Flat;
             idfordeletedonorbtn.Font = new Font("Segoe UI", 10.25F, FontStyle.Bold);
             idfordeletedonorbtn.ForeColor = Color.White;
-            idfordeletedonorbtn.Location = new Point(406, 252);
-            idfordeletedonorbtn.Margin = new Padding(4, 5, 4, 5);
+            idfordeletedonorbtn.Location = new Point(284, 151);
             idfordeletedonorbtn.Name = "idfordeletedonorbtn";
-            idfordeletedonorbtn.Size = new Size(126, 45);
+            idfordeletedonorbtn.Size = new Size(88, 27);
             idfordeletedonorbtn.TabIndex = 2;
             idfordeletedonorbtn.Text = "Id:";
             idfordeletedonorbtn.UseVisualStyleBackColor = false;
@@ -84,20 +82,10 @@
             // idtxtfordeletedonor
             // 
             idtxtfordeletedonor.Anchor = AnchorStyles.None;
-            idtxtfordeletedonor.Location = new Point(579, 258);
-            idtxtfordeletedonor.Margin = new Padding(4, 5, 4, 5);
+            idtxtfordeletedonor.Location = new Point(405, 155);
             idtxtfordeletedonor.Name = "idtxtfordeletedonor";
-            idtxtfordeletedonor.Size = new Size(173, 31);
+            idtxtfordeletedonor.Size = new Size(122, 23);
             idtxtfordeletedonor.TabIndex = 3;
-            // 
-            // deletedonorpanel
-            // 
-            deletedonorpanel.Anchor = AnchorStyles.None;
-            deletedonorpanel.Location = new Point(139, 332);
-            deletedonorpanel.Margin = new Padding(4, 5, 4, 5);
-            deletedonorpanel.Name = "deletedonorpanel";
-            deletedonorpanel.Size = new Size(843, 343);
-            deletedonorpanel.TabIndex = 4;
             // 
             // deletedonorbtn
             // 
@@ -106,31 +94,39 @@
             deletedonorbtn.FlatStyle = FlatStyle.Flat;
             deletedonorbtn.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             deletedonorbtn.ForeColor = Color.White;
-            deletedonorbtn.Location = new Point(463, 707);
-            deletedonorbtn.Margin = new Padding(4, 5, 4, 5);
+            deletedonorbtn.Location = new Point(324, 424);
             deletedonorbtn.Name = "deletedonorbtn";
-            deletedonorbtn.Size = new Size(177, 48);
+            deletedonorbtn.Size = new Size(124, 29);
             deletedonorbtn.TabIndex = 5;
             deletedonorbtn.Text = "Delete";
             deletedonorbtn.UseVisualStyleBackColor = false;
             // 
+            // donorsDataGridView
+            // 
+            donorsDataGridView.Anchor = AnchorStyles.None;
+            donorsDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            donorsDataGridView.Location = new Point(141, 199);
+            donorsDataGridView.Name = "donorsDataGridView";
+            donorsDataGridView.Size = new Size(505, 219);
+            donorsDataGridView.TabIndex = 6;
+            donorsDataGridView.CellContentClick += dataGridView1_CellContentClick;
+            // 
             // deletedonor
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(1143, 775);
+            ClientSize = new Size(800, 449);
+            Controls.Add(donorsDataGridView);
             Controls.Add(deletedonorbtn);
-            Controls.Add(deletedonorpanel);
             Controls.Add(idtxtfordeletedonor);
             Controls.Add(idfordeletedonorbtn);
             Controls.Add(addeletedonorpanel);
-            Margin = new Padding(4, 5, 4, 5);
             Name = "deletedonor";
             Text = "deletedonor";
-            Load += deletedonor_Load;
             addeletedonorpanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)donorsDataGridView).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -141,7 +137,7 @@
         private Button deletedonortxtbtn;
         private Button idfordeletedonorbtn;
         private TextBox idtxtfordeletedonor;
-        private Panel deletedonorpanel;
         private Button deletedonorbtn;
+        private DataGridView donorsDataGridView;
     }
 }

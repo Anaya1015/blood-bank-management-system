@@ -4,13 +4,13 @@
     <Compile Update="Adddonors.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Addinformation.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="AddRecipient.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Admndash.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="Dashboard.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="DecreaseStock.cs">
@@ -56,6 +56,9 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="userlogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Verifydetails.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="viewdonor.cs">

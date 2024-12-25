@@ -72,7 +72,7 @@ namespace project
             {
                 // Admin login
                 this.Hide();
-                Dashboard db = new Dashboard();
+                Admndash db = new Admndash();
                 db.Show();
                 db.FormClosed += (s, args) => this.Close();
             }

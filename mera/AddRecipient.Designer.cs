@@ -51,10 +51,10 @@
             adddonorpanel.Controls.Add(adddonortxtbtn);
             adddonorpanel.Dock = DockStyle.Top;
             adddonorpanel.Location = new Point(0, 0);
-            adddonorpanel.Margin = new Padding(4, 5, 4, 5);
             adddonorpanel.Name = "adddonorpanel";
-            adddonorpanel.Size = new Size(1034, 187);
+            adddonorpanel.Size = new Size(724, 112);
             adddonorpanel.TabIndex = 1;
+            adddonorpanel.Paint += adddonorpanel_Paint;
             // 
             // adddonortxtbtn
             // 
@@ -63,10 +63,9 @@
             adddonortxtbtn.FlatStyle = FlatStyle.Flat;
             adddonortxtbtn.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             adddonortxtbtn.ForeColor = Color.Maroon;
-            adddonortxtbtn.Location = new Point(312, 41);
-            adddonortxtbtn.Margin = new Padding(4, 5, 4, 5);
+            adddonortxtbtn.Location = new Point(218, 25);
             adddonortxtbtn.Name = "adddonortxtbtn";
-            adddonortxtbtn.Size = new Size(443, 93);
+            adddonortxtbtn.Size = new Size(310, 56);
             adddonortxtbtn.TabIndex = 0;
             adddonortxtbtn.Text = "ADD RECIPIENT";
             adddonortxtbtn.UseVisualStyleBackColor = false;
@@ -83,9 +82,10 @@
             panel1.Controls.Add(passadddonorlbl);
             panel1.Controls.Add(maildonortxt);
             panel1.Controls.Add(maildonorlabel);
-            panel1.Location = new Point(87, 244);
+            panel1.Location = new Point(61, 146);
+            panel1.Margin = new Padding(2, 2, 2, 2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(877, 410);
+            panel1.Size = new Size(614, 246);
             panel1.TabIndex = 2;
             panel1.Paint += panel1_Paint;
             // 
@@ -96,22 +96,21 @@
             addsavebtn.FlatStyle = FlatStyle.Popup;
             addsavebtn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             addsavebtn.ForeColor = Color.White;
-            addsavebtn.Location = new Point(403, 255);
-            addsavebtn.Margin = new Padding(4, 5, 4, 5);
+            addsavebtn.Location = new Point(282, 153);
             addsavebtn.Name = "addsavebtn";
-            addsavebtn.Size = new Size(139, 53);
+            addsavebtn.Size = new Size(97, 32);
             addsavebtn.TabIndex = 12;
             addsavebtn.Text = "Add";
             addsavebtn.UseVisualStyleBackColor = false;
+            addsavebtn.Click += addsavebtn_Click;
             // 
             // addressdonortxt
             // 
             addressdonortxt.Anchor = AnchorStyles.None;
-            addressdonortxt.Location = new Point(622, 159);
-            addressdonortxt.Margin = new Padding(4, 5, 4, 5);
+            addressdonortxt.Location = new Point(435, 95);
             addressdonortxt.Multiline = true;
             addressdonortxt.Name = "addressdonortxt";
-            addressdonortxt.Size = new Size(238, 46);
+            addressdonortxt.Size = new Size(168, 29);
             addressdonortxt.TabIndex = 11;
             // 
             // addressdonorlbl
@@ -122,20 +121,18 @@
             addressdonorlbl.FlatStyle = FlatStyle.Flat;
             addressdonorlbl.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             addressdonorlbl.ForeColor = Color.White;
-            addressdonorlbl.Location = new Point(488, 173);
-            addressdonorlbl.Margin = new Padding(4, 0, 4, 0);
+            addressdonorlbl.Location = new Point(342, 104);
             addressdonorlbl.Name = "addressdonorlbl";
-            addressdonorlbl.Size = new Size(106, 32);
+            addressdonorlbl.Size = new Size(70, 21);
             addressdonorlbl.TabIndex = 10;
             addressdonorlbl.Text = "Address";
             // 
             // contactdonortxt
             // 
             contactdonortxt.Anchor = AnchorStyles.None;
-            contactdonortxt.Location = new Point(225, 173);
-            contactdonortxt.Margin = new Padding(4, 5, 4, 5);
+            contactdonortxt.Location = new Point(158, 104);
             contactdonortxt.Name = "contactdonortxt";
-            contactdonortxt.Size = new Size(238, 31);
+            contactdonortxt.Size = new Size(168, 23);
             contactdonortxt.TabIndex = 9;
             // 
             // contactdonorlbl
@@ -146,20 +143,18 @@
             contactdonorlbl.FlatStyle = FlatStyle.Flat;
             contactdonorlbl.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             contactdonorlbl.ForeColor = Color.White;
-            contactdonorlbl.Location = new Point(103, 173);
-            contactdonorlbl.Margin = new Padding(4, 0, 4, 0);
+            contactdonorlbl.Location = new Point(72, 104);
             contactdonorlbl.Name = "contactdonorlbl";
-            contactdonorlbl.Size = new Size(102, 32);
+            contactdonorlbl.Size = new Size(69, 21);
             contactdonorlbl.TabIndex = 8;
             contactdonorlbl.Text = "Contact";
             // 
             // passadddonortxt
             // 
             passadddonortxt.Anchor = AnchorStyles.None;
-            passadddonortxt.Location = new Point(622, 70);
-            passadddonortxt.Margin = new Padding(4, 5, 4, 5);
+            passadddonortxt.Location = new Point(435, 42);
             passadddonortxt.Name = "passadddonortxt";
-            passadddonortxt.Size = new Size(238, 31);
+            passadddonortxt.Size = new Size(168, 23);
             passadddonortxt.TabIndex = 7;
             // 
             // passadddonorlbl
@@ -170,20 +165,18 @@
             passadddonorlbl.FlatStyle = FlatStyle.Flat;
             passadddonorlbl.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             passadddonorlbl.ForeColor = Color.White;
-            passadddonorlbl.Location = new Point(488, 57);
-            passadddonorlbl.Margin = new Padding(4, 0, 4, 0);
+            passadddonorlbl.Location = new Point(342, 34);
             passadddonorlbl.Name = "passadddonorlbl";
-            passadddonorlbl.Size = new Size(122, 32);
+            passadddonorlbl.Size = new Size(82, 21);
             passadddonorlbl.TabIndex = 6;
             passadddonorlbl.Text = "Password";
             // 
             // maildonortxt
             // 
             maildonortxt.Anchor = AnchorStyles.None;
-            maildonortxt.Location = new Point(217, 52);
-            maildonortxt.Margin = new Padding(4, 5, 4, 5);
+            maildonortxt.Location = new Point(152, 31);
             maildonortxt.Name = "maildonortxt";
-            maildonortxt.Size = new Size(238, 31);
+            maildonortxt.Size = new Size(168, 23);
             maildonortxt.TabIndex = 5;
             // 
             // maildonorlabel
@@ -194,22 +187,22 @@
             maildonorlabel.FlatStyle = FlatStyle.Flat;
             maildonorlabel.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             maildonorlabel.ForeColor = Color.White;
-            maildonorlabel.Location = new Point(103, 52);
-            maildonorlabel.Margin = new Padding(4, 0, 4, 0);
+            maildonorlabel.Location = new Point(72, 31);
             maildonorlabel.Name = "maildonorlabel";
-            maildonorlabel.Size = new Size(83, 32);
+            maildonorlabel.Size = new Size(57, 21);
             maildonorlabel.TabIndex = 1;
             maildonorlabel.Text = "E mail";
             // 
             // AddRecipient
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(1034, 708);
+            ClientSize = new Size(724, 425);
             Controls.Add(adddonorpanel);
             Controls.Add(panel1);
+            Margin = new Padding(2, 2, 2, 2);
             Name = "AddRecipient";
             Text = "AddRecipient";
             Load += AddRecipient_Load;
