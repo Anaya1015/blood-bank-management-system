@@ -30,20 +30,36 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(viewdonor));
             viewdonorpanel = new Panel();
+            button1 = new Button();
             viewdonortxtbtn = new Button();
-            viewdonorlistpanel = new Panel();
+            donorgridview = new DataGridView();
             viewdonorpanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)donorgridview).BeginInit();
             SuspendLayout();
             // 
             // viewdonorpanel
             // 
             viewdonorpanel.BackColor = Color.Maroon;
+            viewdonorpanel.Controls.Add(button1);
             viewdonorpanel.Controls.Add(viewdonortxtbtn);
             viewdonorpanel.Dock = DockStyle.Top;
             viewdonorpanel.Location = new Point(0, 0);
             viewdonorpanel.Name = "viewdonorpanel";
             viewdonorpanel.Size = new Size(800, 112);
             viewdonorpanel.TabIndex = 2;
+            // 
+            // button1
+            // 
+            button1.BackColor = Color.White;
+            button1.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button1.ForeColor = Color.Maroon;
+            button1.Location = new Point(52, 35);
+            button1.Name = "button1";
+            button1.Size = new Size(95, 33);
+            button1.TabIndex = 2;
+            button1.Text = "Back";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // viewdonortxtbtn
             // 
@@ -60,13 +76,17 @@
             viewdonortxtbtn.Text = "VIEW DONOR";
             viewdonortxtbtn.UseVisualStyleBackColor = false;
             // 
-            // viewdonorlistpanel
+            // donorgridview
             // 
-            viewdonorlistpanel.Anchor = AnchorStyles.None;
-            viewdonorlistpanel.Location = new Point(116, 148);
-            viewdonorlistpanel.Name = "viewdonorlistpanel";
-            viewdonorlistpanel.Size = new Size(601, 271);
-            viewdonorlistpanel.TabIndex = 3;
+            donorgridview.AccessibleDescription = " ";
+            donorgridview.Anchor = AnchorStyles.None;
+            donorgridview.BackgroundColor = Color.White;
+            donorgridview.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            donorgridview.GridColor = Color.White;
+            donorgridview.Location = new Point(97, 142);
+            donorgridview.Name = "donorgridview";
+            donorgridview.Size = new Size(610, 274);
+            donorgridview.TabIndex = 3;
             // 
             // viewdonor
             // 
@@ -75,11 +95,14 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(800, 450);
-            Controls.Add(viewdonorlistpanel);
+            Controls.Add(donorgridview);
             Controls.Add(viewdonorpanel);
             Name = "viewdonor";
             Text = "viewdonor";
+            WindowState = FormWindowState.Maximized;
+            Load += viewdonor_Load;
             viewdonorpanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)donorgridview).EndInit();
             ResumeLayout(false);
         }
 
@@ -87,6 +110,7 @@
 
         private Panel viewdonorpanel;
         private Button viewdonortxtbtn;
-        private Panel viewdonorlistpanel;
+        private DataGridView donorgridview;
+        private Button button1;
     }
 }

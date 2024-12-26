@@ -181,6 +181,7 @@
             exitrecipient.TabIndex = 5;
             exitrecipient.Text = "Exit";
             exitrecipient.UseVisualStyleBackColor = false;
+            exitrecipient.Click += exitrecipient_Click;
             // 
             // updaterecipient
             // 
@@ -195,6 +196,7 @@
             updaterecipient.TabIndex = 4;
             updaterecipient.Text = "Update Details";
             updaterecipient.UseVisualStyleBackColor = false;
+            updaterecipient.Click += updaterecipient_Click;
             // 
             // viewrecipientbtn
             // 
@@ -209,6 +211,7 @@
             viewrecipientbtn.TabIndex = 3;
             viewrecipientbtn.Text = "View Recipient";
             viewrecipientbtn.UseVisualStyleBackColor = false;
+            viewrecipientbtn.Click += viewrecipientbtn_Click;
             // 
             // deleterecipientbtn
             // 
@@ -223,6 +226,7 @@
             deleterecipientbtn.TabIndex = 2;
             deleterecipientbtn.Text = "Delete Recipient";
             deleterecipientbtn.UseVisualStyleBackColor = false;
+            deleterecipientbtn.Click += deleterecipientbtn_Click;
             // 
             // addrecipientbtn
             // 
@@ -237,6 +241,7 @@
             addrecipientbtn.TabIndex = 1;
             addrecipientbtn.Text = "Add Recipient";
             addrecipientbtn.UseVisualStyleBackColor = false;
+            addrecipientbtn.Click += addrecipientbtn_Click;
             // 
             // ManageRecipient
             // 
@@ -249,6 +254,7 @@
             Controls.Add(managerecipienttxtpnl);
             Name = "ManageRecipient";
             Text = "ManageRecipient";
+            WindowState = FormWindowState.Maximized;
             Load += ManageRecipient_Load;
             managerecipienttxtpnl.ResumeLayout(false);
             managerecipienttxtpnl.PerformLayout();

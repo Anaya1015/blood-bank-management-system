@@ -8,19 +8,20 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace project
+namespace project.Properties
 {
-    public partial class Searchdonor : Form
+    public partial class Addmedicalinfo : Form
     {
-        public Searchdonor()
+        public Addmedicalinfo()
         {
             InitializeComponent();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
+           
             this.Hide();
-            Recipientdashboard managerec = new Recipientdashboard();
+            donordash managerec = new donordash();
             managerec.Show();
             managerec.FormClosed += (s, args) => this.Close();
         }

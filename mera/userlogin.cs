@@ -24,10 +24,6 @@ namespace project
             InitializeComponent();
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-        }
-
         private void loginform_Load(object sender, EventArgs e)
         {
             logbtn.FlatAppearance.BorderSize = 0;
@@ -68,6 +64,7 @@ namespace project
                 return;
             }
 
+            // Check admin credentials (hardcoded as Ali@gmail.com and 123)
             if (email == "Ali@gmail.com" && password == "123")
             {
                 // Admin login
@@ -78,25 +75,35 @@ namespace project
             }
             else
             {
-                // Check donor credentials from the database
-                if (ValidateUser(email, password))
+                // Validate user role (Donor or Recipient)
+                string role = ValidateUserRoleAndCredentials(email, password);
+                if (role == "Donor"||role=="donor")
                 {
+                    // Redirect to Donor Dashboard
                     this.Hide();
-                    UserForm userForm = new UserForm();
-                    userForm.Show();
-                    userForm.FormClosed += (s, args) => this.Close();
+                    donordash donorForm = new donordash();
+                    donorForm.Show();
+                    donorForm.FormClosed += (s, args) => this.Close();
+                }
+                else if (role == "Recipient"||role=="recipient")
+                {
+                    // Redirect to Recipient Dashboard
+                    this.Hide();
+                    Recipientdashboard recipientForm = new Recipientdashboard();
+                    recipientForm.Show();
+                    recipientForm.FormClosed += (s, args) => this.Close();
                 }
                 else
                 {
-                    MessageBox.Show("Invalid credentials. Please try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Invalid credentials or role. Please try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
 
-        private bool ValidateUser(string email, string password)
+        // Consolidated method to validate user and their role
+        private string ValidateUserRoleAndCredentials(string email, string password)
         {
-            bool isValid = false;
-
+            string role = null;
             string connectionString = "Data Source=DESKTOP-CB6C8TK\\SQLEXPRESS01;Initial Catalog=bloodbankmanagementsystem;Integrated Security=True;Encrypt=False";
 
             using (SqlConnection conn = new SqlConnection(connectionString))
@@ -104,15 +111,19 @@ namespace project
                 try
                 {
                     conn.Open();
-
-                    string query = "SELECT COUNT(*) FROM users WHERE email = @Email AND pass = @Password";
+                    // Query to check user credentials and role
+                    string query = "SELECT userrole FROM users WHERE email = @Email AND pass = @Password";
                     SqlCommand cmd = new SqlCommand(query, conn);
 
                     cmd.Parameters.AddWithValue("@Email", email);
-                    cmd.Parameters.AddWithValue("@Password", password);
+                    cmd.Parameters.AddWithValue("@Password", password); // You should hash the password in practice
 
-                    int count = Convert.ToInt32(cmd.ExecuteScalar());
-                    isValid = count > 0;
+                    object result = cmd.ExecuteScalar();
+
+                    if (result != null)
+                    {
+                        role = result.ToString();
+                    }
                 }
                 catch (Exception ex)
                 {
@@ -120,7 +131,7 @@ namespace project
                 }
             }
 
-            return isValid;
+            return role;
         }
 
         private void forgotlink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -129,10 +140,6 @@ namespace project
             rese.Show();
             this.Hide();
             rese.FormClosed += (s, args) => this.Close();
-        }
-
-        private void loginpnl_Paint(object sender, PaintEventArgs e)
-        {
         }
 
         private void signlink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

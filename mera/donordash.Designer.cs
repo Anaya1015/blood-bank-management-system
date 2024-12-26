@@ -1,6 +1,6 @@
 ﻿namespace project
 {
-    partial class Recipientdashboard
+    partial class donordash
     {
         /// <summary>
         /// Required designer variable.
@@ -28,29 +28,29 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Recipientdashboard));
-            Recipientdashpnlbar = new Panel();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(donordash));
+            Donordashpnlbar = new Panel();
             logoutbtn = new Label();
             bbmstxt = new Label();
             blackpanel = new Panel();
             logbutton = new Button();
-            Searchdonorbtn = new Button();
-            Recipientdashpnlbar.SuspendLayout();
+            Adddetailsbtn = new Button();
+            Donordashpnlbar.SuspendLayout();
             blackpanel.SuspendLayout();
             SuspendLayout();
             // 
-            // Recipientdashpnlbar
+            // Donordashpnlbar
             // 
-            Recipientdashpnlbar.BackColor = Color.Transparent;
-            Recipientdashpnlbar.Controls.Add(logoutbtn);
-            Recipientdashpnlbar.Controls.Add(bbmstxt);
-            Recipientdashpnlbar.Dock = DockStyle.Top;
-            Recipientdashpnlbar.Font = new Font("Segoe UI", 26.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            Recipientdashpnlbar.ForeColor = Color.Maroon;
-            Recipientdashpnlbar.Location = new Point(0, 0);
-            Recipientdashpnlbar.Name = "Recipientdashpnlbar";
-            Recipientdashpnlbar.Size = new Size(1037, 98);
-            Recipientdashpnlbar.TabIndex = 4;
+            Donordashpnlbar.BackColor = Color.Transparent;
+            Donordashpnlbar.Controls.Add(logoutbtn);
+            Donordashpnlbar.Controls.Add(bbmstxt);
+            Donordashpnlbar.Dock = DockStyle.Top;
+            Donordashpnlbar.Font = new Font("Segoe UI", 26.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            Donordashpnlbar.ForeColor = Color.Maroon;
+            Donordashpnlbar.Location = new Point(0, 0);
+            Donordashpnlbar.Name = "Donordashpnlbar";
+            Donordashpnlbar.Size = new Size(1017, 98);
+            Donordashpnlbar.TabIndex = 5;
             // 
             // logoutbtn
             // 
@@ -61,7 +61,7 @@
             logoutbtn.FlatStyle = FlatStyle.Flat;
             logoutbtn.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
             logoutbtn.ForeColor = Color.White;
-            logoutbtn.Location = new Point(1355, 13);
+            logoutbtn.Location = new Point(1763, 12);
             logoutbtn.Name = "logoutbtn";
             logoutbtn.Size = new Size(88, 32);
             logoutbtn.TabIndex = 1;
@@ -74,7 +74,7 @@
             bbmstxt.BackColor = Color.Transparent;
             bbmstxt.FlatStyle = FlatStyle.Flat;
             bbmstxt.Font = new Font("Segoe UI", 27.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            bbmstxt.Location = new Point(314, 30);
+            bbmstxt.Location = new Point(285, 31);
             bbmstxt.Name = "bbmstxt";
             bbmstxt.Size = new Size(593, 50);
             bbmstxt.TabIndex = 0;
@@ -84,12 +84,12 @@
             // 
             blackpanel.BackColor = Color.Transparent;
             blackpanel.Controls.Add(logbutton);
-            blackpanel.Controls.Add(Searchdonorbtn);
+            blackpanel.Controls.Add(Adddetailsbtn);
             blackpanel.Dock = DockStyle.Left;
             blackpanel.Location = new Point(0, 98);
             blackpanel.Name = "blackpanel";
-            blackpanel.Size = new Size(233, 537);
-            blackpanel.TabIndex = 5;
+            blackpanel.Size = new Size(233, 398);
+            blackpanel.TabIndex = 6;
             // 
             // logbutton
             // 
@@ -98,7 +98,7 @@
             logbutton.FlatStyle = FlatStyle.Popup;
             logbutton.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             logbutton.ForeColor = Color.White;
-            logbutton.Location = new Point(32, 213);
+            logbutton.Location = new Point(48, 207);
             logbutton.Name = "logbutton";
             logbutton.Size = new Size(157, 59);
             logbutton.TabIndex = 1;
@@ -106,45 +106,45 @@
             logbutton.UseVisualStyleBackColor = false;
             logbutton.Click += logbutton_Click;
             // 
-            // Searchdonorbtn
+            // Adddetailsbtn
             // 
-            Searchdonorbtn.Anchor = AnchorStyles.None;
-            Searchdonorbtn.BackColor = Color.Maroon;
-            Searchdonorbtn.FlatStyle = FlatStyle.Popup;
-            Searchdonorbtn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            Searchdonorbtn.ForeColor = Color.White;
-            Searchdonorbtn.Location = new Point(32, 96);
-            Searchdonorbtn.Name = "Searchdonorbtn";
-            Searchdonorbtn.Size = new Size(157, 59);
-            Searchdonorbtn.TabIndex = 0;
-            Searchdonorbtn.Text = "Search Donor";
-            Searchdonorbtn.UseVisualStyleBackColor = false;
-            Searchdonorbtn.Click += Searchdonorbtn_Click;
+            Adddetailsbtn.Anchor = AnchorStyles.None;
+            Adddetailsbtn.BackColor = Color.Maroon;
+            Adddetailsbtn.FlatStyle = FlatStyle.Popup;
+            Adddetailsbtn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Adddetailsbtn.ForeColor = Color.White;
+            Adddetailsbtn.Location = new Point(48, 79);
+            Adddetailsbtn.Name = "Adddetailsbtn";
+            Adddetailsbtn.Size = new Size(157, 59);
+            Adddetailsbtn.TabIndex = 0;
+            Adddetailsbtn.Text = "Add Medical Details";
+            Adddetailsbtn.UseVisualStyleBackColor = false;
+            Adddetailsbtn.Click += Adddetailsbtn_Click;
             // 
-            // Recipientdashboard
+            // donordash
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(1037, 635);
+            ClientSize = new Size(1017, 496);
             Controls.Add(blackpanel);
-            Controls.Add(Recipientdashpnlbar);
-            Name = "Recipientdashboard";
-            Text = "Recipientdashboard";
-            Recipientdashpnlbar.ResumeLayout(false);
-            Recipientdashpnlbar.PerformLayout();
+            Controls.Add(Donordashpnlbar);
+            Name = "donordash";
+            Text = "UserForm";
+            Donordashpnlbar.ResumeLayout(false);
+            Donordashpnlbar.PerformLayout();
             blackpanel.ResumeLayout(false);
             ResumeLayout(false);
         }
 
         #endregion
 
-        private Panel Recipientdashpnlbar;
+        private Panel Donordashpnlbar;
         private Label logoutbtn;
         private Label bbmstxt;
         private Panel blackpanel;
         private Button logbutton;
-        private Button Searchdonorbtn;
+        private Button Adddetailsbtn;
     }
 }

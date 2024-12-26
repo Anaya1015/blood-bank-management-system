@@ -103,6 +103,14 @@ namespace project
             // Call the function to add the donor
             AddDonorToDatabase(connectionString, email, password, address, contact);
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Managedonor managerec = new Managedonor();
+            managerec.Show();
+            managerec.FormClosed += (s, args) => this.Close();
+        }
     }
 }
 

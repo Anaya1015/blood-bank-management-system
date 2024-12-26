@@ -41,6 +41,7 @@
             passadddonorlbl = new Label();
             maildonortxt = new TextBox();
             maildonorlabel = new Label();
+            button1 = new Button();
             adddonorpanel.SuspendLayout();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -48,6 +49,7 @@
             // adddonorpanel
             // 
             adddonorpanel.BackColor = Color.Maroon;
+            adddonorpanel.Controls.Add(button1);
             adddonorpanel.Controls.Add(adddonortxtbtn);
             adddonorpanel.Dock = DockStyle.Top;
             adddonorpanel.Location = new Point(0, 0);
@@ -72,6 +74,7 @@
             // 
             // panel1
             // 
+            panel1.Anchor = AnchorStyles.None;
             panel1.BackColor = Color.Transparent;
             panel1.Controls.Add(addsavebtn);
             panel1.Controls.Add(addressdonortxt);
@@ -83,7 +86,7 @@
             panel1.Controls.Add(maildonortxt);
             panel1.Controls.Add(maildonorlabel);
             panel1.Location = new Point(61, 146);
-            panel1.Margin = new Padding(2, 2, 2, 2);
+            panel1.Margin = new Padding(2);
             panel1.Name = "panel1";
             panel1.Size = new Size(614, 246);
             panel1.TabIndex = 2;
@@ -193,6 +196,20 @@
             maildonorlabel.TabIndex = 1;
             maildonorlabel.Text = "E mail";
             // 
+            // button1
+            // 
+            button1.Anchor = AnchorStyles.None;
+            button1.BackColor = Color.White;
+            button1.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button1.ForeColor = Color.Maroon;
+            button1.Location = new Point(40, 43);
+            button1.Name = "button1";
+            button1.Size = new Size(95, 33);
+            button1.TabIndex = 2;
+            button1.Text = "Back";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
+            // 
             // AddRecipient
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -202,9 +219,10 @@
             ClientSize = new Size(724, 425);
             Controls.Add(adddonorpanel);
             Controls.Add(panel1);
-            Margin = new Padding(2, 2, 2, 2);
+            Margin = new Padding(2);
             Name = "AddRecipient";
             Text = "AddRecipient";
+            WindowState = FormWindowState.Maximized;
             Load += AddRecipient_Load;
             adddonorpanel.ResumeLayout(false);
             panel1.ResumeLayout(false);
@@ -226,5 +244,6 @@
         private Label addressdonorlbl;
         private TextBox addressdonortxt;
         private Button addsavebtn;
+        private Button button1;
     }
 }

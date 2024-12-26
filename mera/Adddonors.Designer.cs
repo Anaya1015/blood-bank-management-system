@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Adddonors));
             adddonorpanel = new Panel();
+            button1 = new Button();
             adddonortxtbtn = new Button();
             txtpanel = new Panel();
             addsavebtn = new Button();
@@ -48,6 +49,7 @@
             // adddonorpanel
             // 
             adddonorpanel.BackColor = Color.Maroon;
+            adddonorpanel.Controls.Add(button1);
             adddonorpanel.Controls.Add(adddonortxtbtn);
             adddonorpanel.Dock = DockStyle.Top;
             adddonorpanel.Location = new Point(0, 0);
@@ -55,6 +57,20 @@
             adddonorpanel.Size = new Size(800, 112);
             adddonorpanel.TabIndex = 0;
             adddonorpanel.Paint += adddonorpanel_Paint;
+            // 
+            // button1
+            // 
+            button1.Anchor = AnchorStyles.None;
+            button1.BackColor = Color.White;
+            button1.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button1.ForeColor = Color.Maroon;
+            button1.Location = new Point(43, 42);
+            button1.Name = "button1";
+            button1.Size = new Size(95, 33);
+            button1.TabIndex = 2;
+            button1.Text = "Back";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // adddonortxtbtn
             // 
@@ -206,6 +222,7 @@
             Controls.Add(adddonorpanel);
             Name = "Adddonors";
             Text = "Adddonors";
+            WindowState = FormWindowState.Maximized;
             adddonorpanel.ResumeLayout(false);
             txtpanel.ResumeLayout(false);
             txtpanel.PerformLayout();
@@ -226,5 +243,6 @@
         private TextBox addressdonortxt;
         private TextBox contactdonortxt;
         private Button addsavebtn;
+        private Button button1;
     }
 }

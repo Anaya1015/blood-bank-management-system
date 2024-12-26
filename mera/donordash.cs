@@ -1,4 +1,5 @@
-﻿using System;
+﻿using project.Properties;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,19 +11,19 @@ using System.Windows.Forms;
 
 namespace project
 {
-    public partial class Recipientdashboard : Form
+    public partial class donordash : Form
     {
-        public Recipientdashboard()
+        public donordash()
         {
             InitializeComponent();
         }
 
-        private void Searchdonorbtn_Click(object sender, EventArgs e)
+        private void Adddetailsbtn_Click(object sender, EventArgs e)
         {
             this.Hide();
 
             // Show the Login form again
-            Searchdonor loginForm = new Searchdonor();
+            Addmedicalinfo loginForm = new Addmedicalinfo();
             loginForm.Show();
 
             // Optionally, close the current form completely when Login form is closed

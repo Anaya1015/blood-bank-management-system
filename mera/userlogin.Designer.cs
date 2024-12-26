@@ -66,7 +66,6 @@
             loginpnl.Name = "loginpnl";
             loginpnl.Size = new Size(500, 500);
             loginpnl.TabIndex = 0;
-            loginpnl.Paint += loginpnl_Paint;
             // 
             // switchlbl
             // 
@@ -196,7 +195,6 @@
             passtext.PasswordChar = '*';
             passtext.Size = new Size(290, 24);
             passtext.TabIndex = 4;
-            passtext.TextChanged += textBox1_TextChanged;
             // 
             // lblog
             // 

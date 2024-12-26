@@ -91,5 +91,13 @@ namespace project
                 }
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            ManageRecipient managerec = new ManageRecipient();
+            managerec.Show();
+            managerec.FormClosed += (s, args) => this.Close();
+        }
     }
 }

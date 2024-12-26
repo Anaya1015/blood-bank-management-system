@@ -29,68 +29,89 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ViewStock));
-            viewdonorpanel = new Panel();
-            viewdonortxtbtn = new Button();
-            viewdonorlistpanel = new Panel();
-            viewdonorpanel.SuspendLayout();
+            viewstockpanel = new Panel();
+            button1 = new Button();
+            viewstocktxtbtn = new Button();
+            viewstockgrid = new DataGridView();
+            viewstockpanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)viewstockgrid).BeginInit();
             SuspendLayout();
             // 
-            // viewdonorpanel
+            // viewstockpanel
             // 
-            viewdonorpanel.BackColor = Color.Maroon;
-            viewdonorpanel.Controls.Add(viewdonortxtbtn);
-            viewdonorpanel.Dock = DockStyle.Top;
-            viewdonorpanel.Location = new Point(0, 0);
-            viewdonorpanel.Margin = new Padding(4, 5, 4, 5);
-            viewdonorpanel.Name = "viewdonorpanel";
-            viewdonorpanel.Size = new Size(978, 187);
-            viewdonorpanel.TabIndex = 6;
+            viewstockpanel.BackColor = Color.Maroon;
+            viewstockpanel.Controls.Add(button1);
+            viewstockpanel.Controls.Add(viewstocktxtbtn);
+            viewstockpanel.Dock = DockStyle.Top;
+            viewstockpanel.Location = new Point(0, 0);
+            viewstockpanel.Name = "viewstockpanel";
+            viewstockpanel.Size = new Size(685, 112);
+            viewstockpanel.TabIndex = 6;
             // 
-            // viewdonortxtbtn
+            // button1
             // 
-            viewdonortxtbtn.Anchor = AnchorStyles.None;
-            viewdonortxtbtn.BackColor = Color.White;
-            viewdonortxtbtn.FlatStyle = FlatStyle.Flat;
-            viewdonortxtbtn.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            viewdonortxtbtn.ForeColor = Color.Maroon;
-            viewdonortxtbtn.ImageAlign = ContentAlignment.MiddleRight;
-            viewdonortxtbtn.Location = new Point(278, 43);
-            viewdonortxtbtn.Margin = new Padding(4, 5, 4, 5);
-            viewdonortxtbtn.Name = "viewdonortxtbtn";
-            viewdonortxtbtn.Size = new Size(443, 93);
-            viewdonortxtbtn.TabIndex = 0;
-            viewdonortxtbtn.Text = "VIEW STOCK";
-            viewdonortxtbtn.UseVisualStyleBackColor = false;
+            button1.BackColor = Color.White;
+            button1.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button1.ForeColor = Color.Maroon;
+            button1.Location = new Point(32, 44);
+            button1.Name = "button1";
+            button1.Size = new Size(95, 33);
+            button1.TabIndex = 2;
+            button1.Text = "Back";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click_1;
             // 
-            // viewdonorlistpanel
+            // viewstocktxtbtn
             // 
-            viewdonorlistpanel.Anchor = AnchorStyles.None;
-            viewdonorlistpanel.Location = new Point(80, 245);
-            viewdonorlistpanel.Margin = new Padding(4, 5, 4, 5);
-            viewdonorlistpanel.Name = "viewdonorlistpanel";
-            viewdonorlistpanel.Size = new Size(779, 435);
-            viewdonorlistpanel.TabIndex = 7;
+            viewstocktxtbtn.Anchor = AnchorStyles.None;
+            viewstocktxtbtn.BackColor = Color.White;
+            viewstocktxtbtn.FlatStyle = FlatStyle.Flat;
+            viewstocktxtbtn.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            viewstocktxtbtn.ForeColor = Color.Maroon;
+            viewstocktxtbtn.ImageAlign = ContentAlignment.MiddleRight;
+            viewstocktxtbtn.Location = new Point(195, 26);
+            viewstocktxtbtn.Name = "viewstocktxtbtn";
+            viewstocktxtbtn.Size = new Size(310, 56);
+            viewstocktxtbtn.TabIndex = 0;
+            viewstocktxtbtn.Text = "VIEW STOCK";
+            viewstocktxtbtn.UseVisualStyleBackColor = false;
+            // 
+            // viewstockgrid
+            // 
+            viewstockgrid.AllowUserToAddRows = false;
+            viewstockgrid.AllowUserToDeleteRows = false;
+            viewstockgrid.Anchor = AnchorStyles.None;
+            viewstockgrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            viewstockgrid.Location = new Point(177, 155);
+            viewstockgrid.Name = "viewstockgrid";
+            viewstockgrid.ReadOnly = true;
+            viewstockgrid.Size = new Size(389, 226);
+            viewstockgrid.TabIndex = 7;
             // 
             // ViewStock
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(978, 728);
-            Controls.Add(viewdonorlistpanel);
-            Controls.Add(viewdonorpanel);
+            ClientSize = new Size(685, 437);
+            Controls.Add(viewstockgrid);
+            Controls.Add(viewstockpanel);
+            Margin = new Padding(2);
             Name = "ViewStock";
             Text = "ViewStock";
-            WindowState = FormWindowState.Maximized;
-            viewdonorpanel.ResumeLayout(false);
+            WindowState = FormWindowState.Minimized;
+            Load += ViewStock_Load;
+            viewstockpanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)viewstockgrid).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
-        private Panel viewdonorpanel;
-        private Button viewdonortxtbtn;
-        private Panel viewdonorlistpanel;
+        private Panel viewstockpanel;
+        private Button viewstocktxtbtn;
+        private DataGridView viewstockgrid;
+        private Button button1;
     }
 }

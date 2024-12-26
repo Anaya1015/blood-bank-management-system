@@ -30,26 +30,43 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(IncreaseStock));
             viewdonorpanel = new Panel();
-            viewdonortxtbtn = new Button();
-            idfordeletedonorbtn = new Button();
-            idtxtfordeletedonor = new TextBox();
-            addrecipientbtn = new Button();
-            textBox1 = new TextBox();
             button1 = new Button();
-            flowLayoutPanel1 = new FlowLayoutPanel();
+            viewdonortxtbtn = new Button();
+            bloodgroupincreasetxt = new TextBox();
+            unitsincreasetxt = new TextBox();
+            increasebtn = new Button();
+            bloodgroupincreaselbl = new Label();
+            unitsincreaselbl = new Label();
+            increasepnl = new Panel();
+            dataGridViewstock = new DataGridView();
             viewdonorpanel.SuspendLayout();
+            increasepnl.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewstock).BeginInit();
             SuspendLayout();
             // 
             // viewdonorpanel
             // 
             viewdonorpanel.BackColor = Color.Maroon;
+            viewdonorpanel.Controls.Add(button1);
             viewdonorpanel.Controls.Add(viewdonortxtbtn);
             viewdonorpanel.Dock = DockStyle.Top;
             viewdonorpanel.Location = new Point(0, 0);
-            viewdonorpanel.Margin = new Padding(4, 5, 4, 5);
             viewdonorpanel.Name = "viewdonorpanel";
-            viewdonorpanel.Size = new Size(1036, 142);
+            viewdonorpanel.Size = new Size(898, 85);
             viewdonorpanel.TabIndex = 4;
+            // 
+            // button1
+            // 
+            button1.BackColor = Color.White;
+            button1.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button1.ForeColor = Color.Maroon;
+            button1.Location = new Point(69, 24);
+            button1.Name = "button1";
+            button1.Size = new Size(95, 33);
+            button1.TabIndex = 2;
+            button1.Text = "Back";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // viewdonortxtbtn
             // 
@@ -59,117 +76,131 @@
             viewdonortxtbtn.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             viewdonortxtbtn.ForeColor = Color.Maroon;
             viewdonortxtbtn.ImageAlign = ContentAlignment.MiddleRight;
-            viewdonortxtbtn.Location = new Point(327, 10);
-            viewdonortxtbtn.Margin = new Padding(4, 5, 4, 5);
+            viewdonortxtbtn.Location = new Point(316, 6);
             viewdonortxtbtn.Name = "viewdonortxtbtn";
-            viewdonortxtbtn.Size = new Size(443, 93);
+            viewdonortxtbtn.Size = new Size(310, 56);
             viewdonortxtbtn.TabIndex = 0;
             viewdonortxtbtn.Text = "INCREASE STOCK";
             viewdonortxtbtn.UseVisualStyleBackColor = false;
             // 
-            // idfordeletedonorbtn
+            // bloodgroupincreasetxt
             // 
-            idfordeletedonorbtn.Anchor = AnchorStyles.None;
-            idfordeletedonorbtn.BackColor = Color.Maroon;
-            idfordeletedonorbtn.BackgroundImageLayout = ImageLayout.None;
-            idfordeletedonorbtn.FlatStyle = FlatStyle.Flat;
-            idfordeletedonorbtn.Font = new Font("Segoe UI", 10.25F, FontStyle.Bold);
-            idfordeletedonorbtn.ForeColor = Color.White;
-            idfordeletedonorbtn.Location = new Point(86, 246);
-            idfordeletedonorbtn.Margin = new Padding(4, 5, 4, 5);
-            idfordeletedonorbtn.Name = "idfordeletedonorbtn";
-            idfordeletedonorbtn.Size = new Size(223, 54);
-            idfordeletedonorbtn.TabIndex = 5;
-            idfordeletedonorbtn.Text = "Blood Group:";
-            idfordeletedonorbtn.UseVisualStyleBackColor = false;
+            bloodgroupincreasetxt.Anchor = AnchorStyles.None;
+            bloodgroupincreasetxt.Location = new Point(176, 20);
+            bloodgroupincreasetxt.Name = "bloodgroupincreasetxt";
+            bloodgroupincreasetxt.Size = new Size(122, 23);
+            bloodgroupincreasetxt.TabIndex = 8;
             // 
-            // idtxtfordeletedonor
+            // unitsincreasetxt
             // 
-            idtxtfordeletedonor.Anchor = AnchorStyles.None;
-            idtxtfordeletedonor.Location = new Point(327, 264);
-            idtxtfordeletedonor.Margin = new Padding(4, 5, 4, 5);
-            idtxtfordeletedonor.Name = "idtxtfordeletedonor";
-            idtxtfordeletedonor.Size = new Size(173, 31);
-            idtxtfordeletedonor.TabIndex = 8;
+            unitsincreasetxt.Anchor = AnchorStyles.None;
+            unitsincreasetxt.Location = new Point(447, 20);
+            unitsincreasetxt.Name = "unitsincreasetxt";
+            unitsincreasetxt.Size = new Size(122, 23);
+            unitsincreasetxt.TabIndex = 10;
             // 
-            // addrecipientbtn
+            // increasebtn
             // 
-            addrecipientbtn.Anchor = AnchorStyles.None;
-            addrecipientbtn.BackColor = Color.Maroon;
-            addrecipientbtn.FlatStyle = FlatStyle.Popup;
-            addrecipientbtn.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            addrecipientbtn.ForeColor = Color.White;
-            addrecipientbtn.Location = new Point(533, 253);
-            addrecipientbtn.Margin = new Padding(4, 5, 4, 5);
-            addrecipientbtn.Name = "addrecipientbtn";
-            addrecipientbtn.Size = new Size(259, 51);
-            addrecipientbtn.TabIndex = 9;
-            addrecipientbtn.Text = "No of Units:";
-            addrecipientbtn.UseVisualStyleBackColor = false;
+            increasebtn.Anchor = AnchorStyles.None;
+            increasebtn.BackColor = Color.Maroon;
+            increasebtn.FlatStyle = FlatStyle.Popup;
+            increasebtn.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            increasebtn.ForeColor = Color.White;
+            increasebtn.Location = new Point(266, 85);
+            increasebtn.Name = "increasebtn";
+            increasebtn.Size = new Size(132, 33);
+            increasebtn.TabIndex = 11;
+            increasebtn.Text = "Increase";
+            increasebtn.UseVisualStyleBackColor = false;
+            increasebtn.Click += increasebtn_Click;
             // 
-            // textBox1
+            // bloodgroupincreaselbl
             // 
-            textBox1.Anchor = AnchorStyles.None;
-            textBox1.Location = new Point(816, 269);
-            textBox1.Margin = new Padding(4, 5, 4, 5);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(173, 31);
-            textBox1.TabIndex = 10;
+            bloodgroupincreaselbl.Anchor = AnchorStyles.None;
+            bloodgroupincreaselbl.AutoSize = true;
+            bloodgroupincreaselbl.BackColor = Color.Maroon;
+            bloodgroupincreaselbl.FlatStyle = FlatStyle.Flat;
+            bloodgroupincreaselbl.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            bloodgroupincreaselbl.ForeColor = Color.White;
+            bloodgroupincreaselbl.Location = new Point(54, 23);
+            bloodgroupincreaselbl.Name = "bloodgroupincreaselbl";
+            bloodgroupincreaselbl.Size = new Size(98, 20);
+            bloodgroupincreaselbl.TabIndex = 12;
+            bloodgroupincreaselbl.Text = "Blood Group";
             // 
-            // button1
+            // unitsincreaselbl
             // 
-            button1.Anchor = AnchorStyles.None;
-            button1.BackColor = Color.Maroon;
-            button1.FlatStyle = FlatStyle.Popup;
-            button1.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.ForeColor = Color.White;
-            button1.Location = new Point(446, 432);
-            button1.Margin = new Padding(4, 5, 4, 5);
-            button1.Name = "button1";
-            button1.Size = new Size(189, 55);
-            button1.TabIndex = 11;
-            button1.Text = "Increase";
-            button1.UseVisualStyleBackColor = false;
+            unitsincreaselbl.Anchor = AnchorStyles.None;
+            unitsincreaselbl.AutoSize = true;
+            unitsincreaselbl.BackColor = Color.Maroon;
+            unitsincreaselbl.FlatStyle = FlatStyle.Flat;
+            unitsincreaselbl.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            unitsincreaselbl.ForeColor = Color.White;
+            unitsincreaselbl.Location = new Point(338, 23);
+            unitsincreaselbl.Name = "unitsincreaselbl";
+            unitsincreaselbl.Size = new Size(90, 20);
+            unitsincreaselbl.TabIndex = 13;
+            unitsincreaselbl.Text = "No of Units";
             // 
-            // flowLayoutPanel1
+            // increasepnl
             // 
-            flowLayoutPanel1.BackColor = Color.Transparent;
-            flowLayoutPanel1.Location = new Point(66, 212);
-            flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(958, 378);
-            flowLayoutPanel1.TabIndex = 12;
+            increasepnl.Anchor = AnchorStyles.None;
+            increasepnl.Controls.Add(increasebtn);
+            increasepnl.Controls.Add(unitsincreaselbl);
+            increasepnl.Controls.Add(unitsincreasetxt);
+            increasepnl.Controls.Add(bloodgroupincreasetxt);
+            increasepnl.Controls.Add(bloodgroupincreaselbl);
+            increasepnl.Location = new Point(140, 350);
+            increasepnl.Name = "increasepnl";
+            increasepnl.Size = new Size(646, 161);
+            increasepnl.TabIndex = 14;
+            // 
+            // dataGridViewstock
+            // 
+            dataGridViewstock.AllowUserToAddRows = false;
+            dataGridViewstock.AllowUserToDeleteRows = false;
+            dataGridViewstock.Anchor = AnchorStyles.None;
+            dataGridViewstock.BackgroundColor = Color.White;
+            dataGridViewstock.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewstock.Location = new Point(269, 107);
+            dataGridViewstock.Name = "dataGridViewstock";
+            dataGridViewstock.ReadOnly = true;
+            dataGridViewstock.Size = new Size(378, 237);
+            dataGridViewstock.TabIndex = 15;
             // 
             // IncreaseStock
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(1036, 652);
-            Controls.Add(button1);
-            Controls.Add(textBox1);
-            Controls.Add(addrecipientbtn);
-            Controls.Add(idtxtfordeletedonor);
-            Controls.Add(idfordeletedonorbtn);
+            ClientSize = new Size(898, 523);
+            Controls.Add(dataGridViewstock);
             Controls.Add(viewdonorpanel);
-            Controls.Add(flowLayoutPanel1);
+            Controls.Add(increasepnl);
+            Margin = new Padding(2);
             Name = "IncreaseStock";
             Text = "IncreaseStock";
+            WindowState = FormWindowState.Maximized;
             Load += IncreaseStock_Load;
             viewdonorpanel.ResumeLayout(false);
+            increasepnl.ResumeLayout(false);
+            increasepnl.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewstock).EndInit();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
 
         private Panel viewdonorpanel;
         private Button viewdonortxtbtn;
-        private Button idfordeletedonorbtn;
-        private TextBox idtxtfordeletedonor;
-        private Button addrecipientbtn;
-        private TextBox textBox1;
+        private TextBox bloodgroupincreasetxt;
+        private TextBox unitsincreasetxt;
+        private Button increasebtn;
+        private Label bloodgroupincreaselbl;
+        private Label unitsincreaselbl;
+        private Panel increasepnl;
+        private DataGridView dataGridViewstock;
         private Button button1;
-        private FlowLayoutPanel flowLayoutPanel1;
     }
 }

@@ -64,6 +64,7 @@
             managestckbtn.TabIndex = 2;
             managestckbtn.Text = "Manage Stock";
             managestckbtn.UseVisualStyleBackColor = false;
+            managestckbtn.Click += managestckbtn_Click;
             // 
             // managerecipientbtn
             // 
@@ -91,6 +92,7 @@
             managedonorbtn.TabIndex = 0;
             managedonorbtn.Text = "Manage Donor";
             managedonorbtn.UseVisualStyleBackColor = false;
+            managedonorbtn.Click += managedonorbtn_Click;
             // 
             // Admindashpnlbar
             // 
@@ -119,6 +121,7 @@
             logoutbtn.Size = new Size(88, 32);
             logoutbtn.TabIndex = 1;
             logoutbtn.Text = "Logout";
+            logoutbtn.Click += logoutbtn_Click;
             // 
             // bbmstxt
             // 
@@ -127,7 +130,7 @@
             bbmstxt.BackColor = Color.Transparent;
             bbmstxt.FlatStyle = FlatStyle.Flat;
             bbmstxt.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            bbmstxt.Location = new Point(73, 14);
+            bbmstxt.Location = new Point(186, 14);
             bbmstxt.Name = "bbmstxt";
             bbmstxt.Size = new Size(388, 32);
             bbmstxt.TabIndex = 0;
@@ -144,6 +147,7 @@
             Controls.Add(Admindashpnlbar);
             Controls.Add(blackpanel);
             Name = "Admndash";
+            WindowState = FormWindowState.Maximized;
             Load += Admndash_Load;
             blackpanel.ResumeLayout(false);
             Admindashpnlbar.ResumeLayout(false);

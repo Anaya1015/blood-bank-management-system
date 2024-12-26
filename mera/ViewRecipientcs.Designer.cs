@@ -30,21 +30,36 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ViewRecipientcs));
             viewdonorpanel = new Panel();
+            button1 = new Button();
             viewdonortxtbtn = new Button();
-            viewdonorlistpanel = new Panel();
+            viewrecipientgrid = new DataGridView();
             viewdonorpanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)viewrecipientgrid).BeginInit();
             SuspendLayout();
             // 
             // viewdonorpanel
             // 
             viewdonorpanel.BackColor = Color.Maroon;
+            viewdonorpanel.Controls.Add(button1);
             viewdonorpanel.Controls.Add(viewdonortxtbtn);
             viewdonorpanel.Dock = DockStyle.Top;
             viewdonorpanel.Location = new Point(0, 0);
-            viewdonorpanel.Margin = new Padding(4, 5, 4, 5);
             viewdonorpanel.Name = "viewdonorpanel";
-            viewdonorpanel.Size = new Size(1038, 187);
+            viewdonorpanel.Size = new Size(853, 112);
             viewdonorpanel.TabIndex = 3;
+            // 
+            // button1
+            // 
+            button1.BackColor = Color.White;
+            button1.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button1.ForeColor = Color.Maroon;
+            button1.Location = new Point(55, 28);
+            button1.Name = "button1";
+            button1.Size = new Size(95, 33);
+            button1.TabIndex = 2;
+            button1.Text = "Back";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // viewdonortxtbtn
             // 
@@ -54,36 +69,40 @@
             viewdonortxtbtn.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             viewdonortxtbtn.ForeColor = Color.Maroon;
             viewdonortxtbtn.ImageAlign = ContentAlignment.MiddleRight;
-            viewdonortxtbtn.Location = new Point(335, 47);
-            viewdonortxtbtn.Margin = new Padding(4, 5, 4, 5);
+            viewdonortxtbtn.Location = new Point(297, 28);
             viewdonortxtbtn.Name = "viewdonortxtbtn";
-            viewdonortxtbtn.Size = new Size(443, 93);
+            viewdonortxtbtn.Size = new Size(310, 56);
             viewdonortxtbtn.TabIndex = 0;
             viewdonortxtbtn.Text = "VIEW RECIPIENT";
             viewdonortxtbtn.UseVisualStyleBackColor = false;
             // 
-            // viewdonorlistpanel
+            // viewrecipientgrid
             // 
-            viewdonorlistpanel.Anchor = AnchorStyles.None;
-            viewdonorlistpanel.Location = new Point(141, 246);
-            viewdonorlistpanel.Margin = new Padding(4, 5, 4, 5);
-            viewdonorlistpanel.Name = "viewdonorlistpanel";
-            viewdonorlistpanel.Size = new Size(790, 405);
-            viewdonorlistpanel.TabIndex = 4;
+            viewrecipientgrid.Anchor = AnchorStyles.None;
+            viewrecipientgrid.BackgroundColor = Color.White;
+            viewrecipientgrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            viewrecipientgrid.Location = new Point(140, 161);
+            viewrecipientgrid.Name = "viewrecipientgrid";
+            viewrecipientgrid.Size = new Size(610, 228);
+            viewrecipientgrid.TabIndex = 4;
+            viewrecipientgrid.CellContentClick += viewrecipientgrid_CellContentClick;
             // 
             // ViewRecipientcs
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(1038, 703);
-            Controls.Add(viewdonorlistpanel);
+            ClientSize = new Size(853, 422);
+            Controls.Add(viewrecipientgrid);
             Controls.Add(viewdonorpanel);
+            Margin = new Padding(2);
             Name = "ViewRecipientcs";
             Text = "ViewRecipientcs";
+            WindowState = FormWindowState.Maximized;
             Load += ViewRecipientcs_Load;
             viewdonorpanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)viewrecipientgrid).EndInit();
             ResumeLayout(false);
         }
 
@@ -91,6 +110,7 @@
 
         private Panel viewdonorpanel;
         private Button viewdonortxtbtn;
-        private Panel viewdonorlistpanel;
+        private DataGridView viewrecipientgrid;
+        private Button button1;
     }
 }

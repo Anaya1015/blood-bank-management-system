@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(deletedonor));
             addeletedonorpanel = new Panel();
+            button1 = new Button();
             deletedonortxtbtn = new Button();
             idfordeletedonorbtn = new Button();
             idtxtfordeletedonor = new TextBox();
@@ -42,12 +43,27 @@
             // addeletedonorpanel
             // 
             addeletedonorpanel.BackColor = Color.Maroon;
+            addeletedonorpanel.Controls.Add(button1);
             addeletedonorpanel.Controls.Add(deletedonortxtbtn);
             addeletedonorpanel.Dock = DockStyle.Top;
             addeletedonorpanel.Location = new Point(0, 0);
             addeletedonorpanel.Name = "addeletedonorpanel";
             addeletedonorpanel.Size = new Size(800, 112);
             addeletedonorpanel.TabIndex = 1;
+            addeletedonorpanel.Paint += addeletedonorpanel_Paint;
+            // 
+            // button1
+            // 
+            button1.BackColor = Color.White;
+            button1.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button1.ForeColor = Color.Maroon;
+            button1.Location = new Point(51, 40);
+            button1.Name = "button1";
+            button1.Size = new Size(95, 33);
+            button1.TabIndex = 2;
+            button1.Text = "Back";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // deletedonortxtbtn
             // 
@@ -100,14 +116,18 @@
             deletedonorbtn.TabIndex = 5;
             deletedonorbtn.Text = "Delete";
             deletedonorbtn.UseVisualStyleBackColor = false;
+            deletedonorbtn.Click += deletedonorbtn_Click;
             // 
             // donorsDataGridView
             // 
+            donorsDataGridView.AllowUserToAddRows = false;
+            donorsDataGridView.AllowUserToDeleteRows = false;
             donorsDataGridView.Anchor = AnchorStyles.None;
             donorsDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            donorsDataGridView.Location = new Point(141, 199);
+            donorsDataGridView.Location = new Point(51, 199);
             donorsDataGridView.Name = "donorsDataGridView";
-            donorsDataGridView.Size = new Size(505, 219);
+            donorsDataGridView.ReadOnly = true;
+            donorsDataGridView.Size = new Size(685, 219);
             donorsDataGridView.TabIndex = 6;
             donorsDataGridView.CellContentClick += dataGridView1_CellContentClick;
             // 
@@ -125,6 +145,8 @@
             Controls.Add(addeletedonorpanel);
             Name = "deletedonor";
             Text = "deletedonor";
+            WindowState = FormWindowState.Maximized;
+            Load += deletedonor_Load;
             addeletedonorpanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)donorsDataGridView).EndInit();
             ResumeLayout(false);
@@ -139,5 +161,6 @@
         private TextBox idtxtfordeletedonor;
         private Button deletedonorbtn;
         private DataGridView donorsDataGridView;
+        private Button button1;
     }
 }

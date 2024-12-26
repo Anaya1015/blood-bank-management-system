@@ -93,6 +93,7 @@
             exitbtndonor.TabIndex = 4;
             exitbtndonor.Text = "Exit";
             exitbtndonor.UseVisualStyleBackColor = false;
+            exitbtndonor.Click += exitbtndonor_Click;
             // 
             // updatedonorbtn
             // 
@@ -107,6 +108,7 @@
             updatedonorbtn.TabIndex = 3;
             updatedonorbtn.Text = "Update Details";
             updatedonorbtn.UseVisualStyleBackColor = false;
+            updatedonorbtn.Click += updatedonorbtn_Click;
             // 
             // viewdonorbtn
             // 
@@ -121,6 +123,7 @@
             viewdonorbtn.TabIndex = 2;
             viewdonorbtn.Text = "View Donors";
             viewdonorbtn.UseVisualStyleBackColor = false;
+            viewdonorbtn.Click += viewdonorbtn_Click;
             // 
             // deletedonotbtn
             // 
@@ -135,6 +138,7 @@
             deletedonotbtn.TabIndex = 1;
             deletedonotbtn.Text = "Delete Donor";
             deletedonotbtn.UseVisualStyleBackColor = false;
+            deletedonotbtn.Click += deletedonotbtn_Click;
             // 
             // adddonorbtn
             // 
@@ -149,6 +153,7 @@
             adddonorbtn.TabIndex = 0;
             adddonorbtn.Text = "Add Donor";
             adddonorbtn.UseVisualStyleBackColor = false;
+            adddonorbtn.Click += adddonorbtn_Click;
             // 
             // Managedonor
             // 
@@ -161,6 +166,7 @@
             Controls.Add(managedonortxtpnl);
             Name = "Managedonor";
             Text = "Managedonor";
+            WindowState = FormWindowState.Maximized;
             Load += Managedonor_Load;
             managedonortxtpnl.ResumeLayout(false);
             managedonortxtpnl.PerformLayout();

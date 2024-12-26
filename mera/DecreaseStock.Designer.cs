@@ -30,26 +30,43 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DecreaseStock));
             viewdonorpanel = new Panel();
-            viewdonortxtbtn = new Button();
-            textBox1 = new TextBox();
-            idtxtfordeletedonor = new TextBox();
             button1 = new Button();
-            idfordeletedonorbtn = new Button();
-            addrecipientbtn = new Button();
-            flowLayoutPanel1 = new FlowLayoutPanel();
+            viewdonortxtbtn = new Button();
+            dataGridViewstock = new DataGridView();
+            deccreasepnl = new Panel();
+            decreasebtn = new Button();
+            unitsdecreaselbl = new Label();
+            unitsdecreasetxt = new TextBox();
+            bloodgroupdecreasetxt = new TextBox();
+            bloodgroupdecreaselbl = new Label();
             viewdonorpanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewstock).BeginInit();
+            deccreasepnl.SuspendLayout();
             SuspendLayout();
             // 
             // viewdonorpanel
             // 
             viewdonorpanel.BackColor = Color.Maroon;
+            viewdonorpanel.Controls.Add(button1);
             viewdonorpanel.Controls.Add(viewdonortxtbtn);
             viewdonorpanel.Dock = DockStyle.Top;
             viewdonorpanel.Location = new Point(0, 0);
-            viewdonorpanel.Margin = new Padding(4, 5, 4, 5);
             viewdonorpanel.Name = "viewdonorpanel";
-            viewdonorpanel.Size = new Size(1062, 187);
+            viewdonorpanel.Size = new Size(782, 112);
             viewdonorpanel.TabIndex = 5;
+            // 
+            // button1
+            // 
+            button1.BackColor = Color.White;
+            button1.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button1.ForeColor = Color.Maroon;
+            button1.Location = new Point(38, 30);
+            button1.Name = "button1";
+            button1.Size = new Size(95, 33);
+            button1.TabIndex = 1;
+            button1.Text = "Back";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // viewdonortxtbtn
             // 
@@ -59,118 +76,131 @@
             viewdonortxtbtn.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             viewdonortxtbtn.ForeColor = Color.Maroon;
             viewdonortxtbtn.ImageAlign = ContentAlignment.MiddleRight;
-            viewdonortxtbtn.Location = new Point(345, 50);
-            viewdonortxtbtn.Margin = new Padding(4, 5, 4, 5);
+            viewdonortxtbtn.Location = new Point(262, 30);
             viewdonortxtbtn.Name = "viewdonortxtbtn";
-            viewdonortxtbtn.Size = new Size(443, 93);
+            viewdonortxtbtn.Size = new Size(310, 56);
             viewdonortxtbtn.TabIndex = 0;
             viewdonortxtbtn.Text = "DECREASE STOCK";
             viewdonortxtbtn.UseVisualStyleBackColor = false;
             // 
-            // textBox1
+            // dataGridViewstock
             // 
-            textBox1.Anchor = AnchorStyles.None;
-            textBox1.Location = new Point(848, 306);
-            textBox1.Margin = new Padding(4, 5, 4, 5);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(173, 31);
-            textBox1.TabIndex = 8;
+            dataGridViewstock.AllowUserToAddRows = false;
+            dataGridViewstock.AllowUserToDeleteRows = false;
+            dataGridViewstock.Anchor = AnchorStyles.None;
+            dataGridViewstock.BackgroundColor = Color.White;
+            dataGridViewstock.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewstock.Location = new Point(222, 129);
+            dataGridViewstock.Name = "dataGridViewstock";
+            dataGridViewstock.ReadOnly = true;
+            dataGridViewstock.Size = new Size(378, 237);
+            dataGridViewstock.TabIndex = 16;
             // 
-            // idtxtfordeletedonor
+            // deccreasepnl
             // 
-            idtxtfordeletedonor.Anchor = AnchorStyles.None;
-            idtxtfordeletedonor.Location = new Point(373, 306);
-            idtxtfordeletedonor.Margin = new Padding(4, 5, 4, 5);
-            idtxtfordeletedonor.Name = "idtxtfordeletedonor";
-            idtxtfordeletedonor.Size = new Size(173, 31);
-            idtxtfordeletedonor.TabIndex = 7;
+            deccreasepnl.Anchor = AnchorStyles.None;
+            deccreasepnl.Controls.Add(decreasebtn);
+            deccreasepnl.Controls.Add(unitsdecreaselbl);
+            deccreasepnl.Controls.Add(unitsdecreasetxt);
+            deccreasepnl.Controls.Add(bloodgroupdecreasetxt);
+            deccreasepnl.Controls.Add(bloodgroupdecreaselbl);
+            deccreasepnl.Location = new Point(56, 372);
+            deccreasepnl.Name = "deccreasepnl";
+            deccreasepnl.Size = new Size(714, 161);
+            deccreasepnl.TabIndex = 17;
             // 
-            // button1
+            // decreasebtn
             // 
-            button1.Anchor = AnchorStyles.None;
-            button1.BackColor = Color.Maroon;
-            button1.FlatStyle = FlatStyle.Popup;
-            button1.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.ForeColor = Color.White;
-            button1.Location = new Point(460, 460);
-            button1.Margin = new Padding(4, 5, 4, 5);
-            button1.Name = "button1";
-            button1.Size = new Size(189, 55);
-            button1.TabIndex = 6;
-            button1.Text = "Decrease";
-            button1.UseVisualStyleBackColor = false;
+            decreasebtn.Anchor = AnchorStyles.None;
+            decreasebtn.BackColor = Color.Maroon;
+            decreasebtn.FlatStyle = FlatStyle.Popup;
+            decreasebtn.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            decreasebtn.ForeColor = Color.White;
+            decreasebtn.Location = new Point(291, 92);
+            decreasebtn.Name = "decreasebtn";
+            decreasebtn.Size = new Size(132, 33);
+            decreasebtn.TabIndex = 11;
+            decreasebtn.Text = "Decrease";
+            decreasebtn.UseVisualStyleBackColor = false;
+            decreasebtn.Click += decreasebtn_Click;
             // 
-            // idfordeletedonorbtn
+            // unitsdecreaselbl
             // 
-            idfordeletedonorbtn.Anchor = AnchorStyles.None;
-            idfordeletedonorbtn.BackColor = Color.Maroon;
-            idfordeletedonorbtn.BackgroundImageLayout = ImageLayout.None;
-            idfordeletedonorbtn.FlatStyle = FlatStyle.Flat;
-            idfordeletedonorbtn.Font = new Font("Segoe UI", 10.25F, FontStyle.Bold);
-            idfordeletedonorbtn.ForeColor = Color.White;
-            idfordeletedonorbtn.Location = new Point(124, 283);
-            idfordeletedonorbtn.Margin = new Padding(4, 5, 4, 5);
-            idfordeletedonorbtn.Name = "idfordeletedonorbtn";
-            idfordeletedonorbtn.Size = new Size(223, 54);
-            idfordeletedonorbtn.TabIndex = 4;
-            idfordeletedonorbtn.Text = "Blood Group:";
-            idfordeletedonorbtn.UseVisualStyleBackColor = false;
+            unitsdecreaselbl.Anchor = AnchorStyles.None;
+            unitsdecreaselbl.AutoSize = true;
+            unitsdecreaselbl.BackColor = Color.Maroon;
+            unitsdecreaselbl.FlatStyle = FlatStyle.Flat;
+            unitsdecreaselbl.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            unitsdecreaselbl.ForeColor = Color.White;
+            unitsdecreaselbl.Location = new Point(372, 29);
+            unitsdecreaselbl.Name = "unitsdecreaselbl";
+            unitsdecreaselbl.Size = new Size(90, 20);
+            unitsdecreaselbl.TabIndex = 13;
+            unitsdecreaselbl.Text = "No of Units";
             // 
-            // addrecipientbtn
+            // unitsdecreasetxt
             // 
-            addrecipientbtn.Anchor = AnchorStyles.None;
-            addrecipientbtn.BackColor = Color.Maroon;
-            addrecipientbtn.FlatStyle = FlatStyle.Popup;
-            addrecipientbtn.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            addrecipientbtn.ForeColor = Color.White;
-            addrecipientbtn.Location = new Point(574, 286);
-            addrecipientbtn.Margin = new Padding(4, 5, 4, 5);
-            addrecipientbtn.Name = "addrecipientbtn";
-            addrecipientbtn.Size = new Size(259, 51);
-            addrecipientbtn.TabIndex = 5;
-            addrecipientbtn.Text = "No of Units:";
-            addrecipientbtn.UseVisualStyleBackColor = false;
+            unitsdecreasetxt.Anchor = AnchorStyles.None;
+            unitsdecreasetxt.Location = new Point(499, 26);
+            unitsdecreasetxt.Name = "unitsdecreasetxt";
+            unitsdecreasetxt.Size = new Size(122, 23);
+            unitsdecreasetxt.TabIndex = 10;
             // 
-            // flowLayoutPanel1
+            // bloodgroupdecreasetxt
             // 
-            flowLayoutPanel1.BackColor = Color.Transparent;
-            flowLayoutPanel1.Location = new Point(99, 250);
-            flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(951, 400);
-            flowLayoutPanel1.TabIndex = 9;
-            flowLayoutPanel1.Paint += flowLayoutPanel1_Paint;
+            bloodgroupdecreasetxt.Anchor = AnchorStyles.None;
+            bloodgroupdecreasetxt.Location = new Point(199, 26);
+            bloodgroupdecreasetxt.Name = "bloodgroupdecreasetxt";
+            bloodgroupdecreasetxt.Size = new Size(122, 23);
+            bloodgroupdecreasetxt.TabIndex = 8;
+            // 
+            // bloodgroupdecreaselbl
+            // 
+            bloodgroupdecreaselbl.Anchor = AnchorStyles.None;
+            bloodgroupdecreaselbl.AutoSize = true;
+            bloodgroupdecreaselbl.BackColor = Color.Maroon;
+            bloodgroupdecreaselbl.FlatStyle = FlatStyle.Flat;
+            bloodgroupdecreaselbl.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            bloodgroupdecreaselbl.ForeColor = Color.White;
+            bloodgroupdecreaselbl.Location = new Point(71, 29);
+            bloodgroupdecreaselbl.Name = "bloodgroupdecreaselbl";
+            bloodgroupdecreaselbl.Size = new Size(98, 20);
+            bloodgroupdecreaselbl.TabIndex = 12;
+            bloodgroupdecreaselbl.Text = "Blood Group";
             // 
             // DecreaseStock
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(1062, 733);
-            Controls.Add(textBox1);
-            Controls.Add(button1);
-            Controls.Add(idtxtfordeletedonor);
+            ClientSize = new Size(782, 524);
+            Controls.Add(deccreasepnl);
+            Controls.Add(dataGridViewstock);
             Controls.Add(viewdonorpanel);
-            Controls.Add(addrecipientbtn);
-            Controls.Add(idfordeletedonorbtn);
-            Controls.Add(flowLayoutPanel1);
+            Margin = new Padding(2);
             Name = "DecreaseStock";
             Text = "DecreaseStock";
+            WindowState = FormWindowState.Maximized;
             Load += DecreaseStock_Load;
             viewdonorpanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dataGridViewstock).EndInit();
+            deccreasepnl.ResumeLayout(false);
+            deccreasepnl.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
 
         private Panel viewdonorpanel;
         private Button viewdonortxtbtn;
-        private TextBox textBox1;
-        private TextBox idtxtfordeletedonor;
+        private DataGridView dataGridViewstock;
+        private Panel deccreasepnl;
+        private Button decreasebtn;
+        private Label unitsdecreaselbl;
+        private TextBox unitsdecreasetxt;
+        private TextBox bloodgroupdecreasetxt;
+        private Label bloodgroupdecreaselbl;
         private Button button1;
-        private Button idfordeletedonorbtn;
-        private Button addrecipientbtn;
-        private FlowLayoutPanel flowLayoutPanel1;
     }
 }
